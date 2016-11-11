@@ -1,0 +1,5 @@
+---
+
+glusterfs_storage_ppa_use: yes
+glusterfs_storage_ppa_version: "3.5"
+glusterfs_storage_daemon: glusterfs-server

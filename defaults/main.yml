@@ -1,0 +1,11 @@
+---
+
+glusterfs_storage_gluster_rel: 38 
+glusterfs_storage_mount_dir: /mnt/gluster
+glusterfs_storage_brick_dir: /glusterfs/brick
+glusterfs_storage_volume: glustorage 
+glusterfs_storage_host_group: glusterfs 
+glusterfs_storage_brick_config_var: "{{ groups['glusterfs'] }}"
+glusterfs_storage_replica_count: 3
+
+glusterfs_storage_brick_config: "replica {{ glusterfs_storage_replica_count }} {% for glusnode in glusterfs_storage_brick_config_var %}{{ glusnode }}:{{ glusterfs_storage_brick_dir }} {% endfor %}"
